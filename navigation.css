@@ -1,0 +1,66 @@
+html,
+body {
+  background-color: rgb(70, 70, 70);
+  color: white;
+  text-align: center;
+}
+
+.pageslist {
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pageslist > a {
+  display: flexbox;
+  align-items: center;
+  padding: 20px 10px;
+  flex-grow: 1;
+  flex-basis: 25%;
+}
+
+.backBtn {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.maxWidth {
+    min-width: 400px;
+}
+
+.minWidth {
+    min-width: 100px;
+}
+
+.midWidth {
+    min-width: 300px;
+}
+
+.midnWidth {
+    min-width: 200px;
+}
+
+.btn {
+  background: rgb(36, 36, 36);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  line-height: 25px;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+  background: rgb(50, 50, 50);
+}
