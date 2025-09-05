@@ -35,6 +35,10 @@ body {
   height: 40px;
 }
 
+.maxxWidth {
+    min-width: 700px;
+}
+
 .maxWidth {
     min-width: 400px;
 }
