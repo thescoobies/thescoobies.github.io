@@ -1,74 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en-us">
-
-  <head>
-    <title>The Scoobies Land - Games - Doom</title>
-  
-    <!-- CSS -->
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  
-    <script type="text/javascript" src="./js-dos-api.js"></script>
-  
-  </head>
-  <body style="background-color:#121212; color: white">
-  
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      #DOOM>.dosbox-container {
-        margin: 0;
-        padding: 0;
-        border: none;
-        width: 500px;
-        height: 500px;
-      }
-    
-      #DOOM>.dosbox-container>.dosbox-overlay {
-        background: url("./DOOM.png");
-      }
-    
-      #DOOM>.dosbox-container>.dosbox-overlay>.dosbox-start {
-        border-radius: 17px 17px 17px 17px;
-        -moz-border-radius: 17px 17px 17px 17px;
-        -webkit-border-radius: 17px 17px 17px 17px;
-        border: 0px solid #000000;
-        background-color: rgba(90, 90, 90, 0.57);
-        padding: 5px;
-        text-align: center;
-        vertical-align: middle;
-        width: 10em;
-        margin: 0 auto;
-      }
-    
-      a:link {
-        color: white
-      }
-    </style>
-    <center>
-      <div id="DOOM" class="dosbox-default"></div>
-
-      <br><button onclick="dosbox_DOOM.requestFullScreen();">Fullscreen</button>
-    
-      <script type="text/javascript">
-        var dosbox_DOOM = new Dosbox({
-          id: "DOOM",
-          onload: function (dosbox) {
-            dosbox_DOOM.run("./DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
-          }
-        });
-
-        dosbox_DOOM.ui.start.click();
-      </script>
-    </center>
-  </body>
-
-=======
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -87,5 +16,4 @@
             <p>* Requires chrome version 137 or higher</p>
         </div>
     </body>
->>>>>>> c43ab37 (a)
 </html>
