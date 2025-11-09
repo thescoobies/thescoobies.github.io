@@ -1,0 +1,91 @@
+<!--
+Source - https://stackoverflow.com/q
+Posted by Don Yanda
+Retrieved 2025-11-07, License - CC BY-SA 4.0
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body style="margin:0;">
+        <div id="canvasContainer">
+            <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 width=1920 height=1080></canvas>
+        </div>
+        <br><button id="fullscreen">Fullscreen</button><button id="consoleToggle">Toggle Console</button>
+        <div id="consoleText" hidden></div>
+        <script type='text/javascript'>
+            var consoleText = document.getElementById("consoleText");
+            var canvasContainer = document.getElementById("canvasContainer");
+            var canvas = document.getElementById("canvas");
+            var fullscreenBtn = document.getElementById("fullscreen");
+            var consoleBtn = document.getElementById("consoleToggle");
+
+            const oldLog = console.log;
+            const oldWarn = console.warn;
+            const oldErr = console.error;
+
+            function printString(color, string) {
+                var p = document.createElement("p");
+                p.style.color = color || "#000000";
+                p.innerHTML = string || "[no arg]";
+                consoleText.appendChild(p);
+            }
+
+            console.log = function(...args) {
+                oldLog(...args);
+                if (args.length == 0) {
+                    printString("#888888");
+                }
+                for (let i = 0; i < args.length; i++) {
+                    printString("#888888", "[LOG] " + args[i]);
+                }
+            }
+
+            console.warn = function(...args) {
+                oldWarn(...args);
+                if (args.length == 0) {
+                    printString("#ffff88");
+                }
+                for (let i = 0; i < args.length; i++) {
+                    printString("#ffff88", "[WARN] " + args[i]);
+                }
+            }
+
+            console.error = function(...args) {
+                oldErr(...args);
+                if (args.length == 0) {
+                    printString("#ff8888");
+                }
+                for (let i = 0; i < args.length; i++) {
+                    printString("#ff8888", "[ERR] " + args[i]);
+                }
+            }
+
+            var Module = {
+                print: console.log,
+                printErr: console.error,
+                canvas: canvas
+            };
+
+            consoleBtn.onclick = function() { consoleText.hidden = !consoleText.hidden; }
+
+            fullscreenBtn.onclick = function() {
+                canvasContainer.requestFullscreen();
+                canvas.style.width = screen.width.toString() + "px";
+                canvas.style.height = screen.height.toString() + "px";
+            }
+
+            document.addEventListener('fullscreenchange', function() {
+                if (!document.fullscreenElement) {
+                    canvas.style.width = "960px";
+                    canvas.style.height = "540px";
+                }
+            });
+        </script>
+        <script src="powder.js" onload="window.create_powder(Module)"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    background-color: gray;
+}
+
+#canvas {
+    width: 960px;
+    height: 540px;
+    background-color: black;
+}
+
+#consoleText {
+    margin: auto;
+    width: 960px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: black;
+    text-align: left;
+}
