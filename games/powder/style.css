@@ -7,6 +7,7 @@ body {
     width: 960px;
     height: 540px;
     background-color: black;
+    rendering: pixelated;
 }
 
 #consoleText {
