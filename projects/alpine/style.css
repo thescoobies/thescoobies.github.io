@@ -1,0 +1,9 @@
+body {
+    background-color: gray;
+    margin: 0;
+}
+
+#screen_container.canvas {
+    width: 200%;
+    height: 200%;
+}
