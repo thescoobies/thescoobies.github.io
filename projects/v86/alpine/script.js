@@ -1,12 +1,12 @@
 window.onload = function()
 {
     var emulator = new V86({
-        wasm_path: "./build/v86.wasm",
+        wasm_path: "../build/v86.wasm",
         memory_size: 1024 * 1024 * 1024,
         vga_memory_size: 16 * 1024 * 1024,
         screen_container: document.getElementById("screen_container"),
-        bios: { url: "./bios/seabios.bin" },
-        vga_bios: { url: "./bios/vgabios.bin" },
+        bios: { url: "../bios/seabios.bin" },
+        vga_bios: { url: "../bios/vgabios.bin" },
         filesystem: {
             baseurl: "./images/alpine-rootfs-flat",
             basefs: "./images/alpine-fs.json",
@@ -66,5 +66,14 @@ window.onload = function()
             });
         });
         this.blur();
+    };
+    document.getElementById("fullscreen").onclick = async function()
+    {
+        await document.getElementById("screen_container").requestFullscreen({"navigationUI": "hide"});
+        await document.getElementById("screen_canvas").requestPointerLock({unadjustedMovement: true});
+    };
+    document.getElementById("screen_canvas").onclick = async function()
+    {
+        await document.getElementById("screen_canvas").requestPointerLock({unadjustedMovement: true});
     };
 };

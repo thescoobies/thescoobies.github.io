@@ -4,11 +4,11 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="./build/libv86.js" type="module"></script>
+    <script src="../build/libv86.js" type="module"></script>
     <script src="./script.js"></script>
     <div id="screen_container">
         <div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
-        <canvas></canvas>
+        <canvas id="screen_canvas"></canvas>
     </div>
     
     <hr>
@@ -16,4 +16,5 @@
     <input id="restore_file" type="button" value="Load state from file">
     <input id="restore_file2" type="file" style="display: none;">
     <input id="file_upload" type="button" value="Upload files">
+    <input id="fullscreen" type="button" value="Fullscreen">
 </body>
